@@ -1,6 +1,6 @@
 package payment;
 
-public abstract class CreditCardPayment implements PaymentStrategy{
+public class CreditCardPayment implements PaymentStrategy{
     String cardNumber;
     String cardHolderName;
 
@@ -9,10 +9,13 @@ public abstract class CreditCardPayment implements PaymentStrategy{
         this.cardHolderName = cardHolderName;
     }
 
+    @Override
     public void pay(double amount) {
-        //
+        System.out.println(getPaymentDetails() + "Amount : " + amount);
     }
+
+    @Override
     public String getPaymentDetails() {
-        return null;
+        return "Card Number : " + cardNumber + "\nCardholder: " + cardHolderName;
     }
 }

@@ -1,6 +1,6 @@
 package payment;
 
 public abstract interface PaymentStrategy {
-    public abstract void pay();
-    public String getPaymentDetails();
+    void pay(double amount);
+    String getPaymentDetails();
 }
